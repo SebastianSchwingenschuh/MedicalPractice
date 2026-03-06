@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.htlleonding.health.controller.MedicalPracticeController">
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.htlleonding.health.controller.MedicalPracticeController">
+   <children>
+      <Label alignment="CENTER" prefHeight="0.0" prefWidth="704.0" text="+ Medical Practice +" textFill="RED">
+         <font>
+            <Font name="Comic Sans MS" size="72.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="176.0" prefWidth="704.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="334.0">
+               <children>
+                  <Label alignment="TOP_CENTER" prefHeight="18.0" prefWidth="392.0" text="Waiting Room">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea prefHeight="200.0" prefWidth="587.0" />
+               </children>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="371.0">
+               <children>
+                  <Label alignment="TOP_CENTER" prefHeight="5.0" prefWidth="365.0" text="Patient Check-In" />
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Label">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="16.0" text="Label" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="47.0" text="Label" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="77.0" text="Label" GridPane.rowIndex="3" />
+                        <TextField GridPane.columnIndex="1" />
+                        <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField layoutX="196.0" layoutY="12.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
 </VBox>

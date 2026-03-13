@@ -1,6 +1,7 @@
 module at.htlleonding.health {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jdk.jdi;
 
     opens at.htlleonding.health to javafx.fxml;
     exports at.htlleonding.health;

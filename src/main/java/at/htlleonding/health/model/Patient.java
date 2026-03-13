@@ -1,14 +1,21 @@
 package at.htlleonding.health.model;
 
+import com.sun.jdi.connect.Connector;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class Patient implements Comparable<Patient>{
     private String name;
-    private LocalDate appointment;
+    private LocalDateTime appointment;
     private boolean isEmergency;
 
-    public Patient(String johnDoe, LocalDateTime of, boolean b) {
+    public Patient(String name, LocalDateTime appointment, boolean isEmergency) {
+        this.name = name;
+        this.appointment = appointment;
+        this.isEmergency = isEmergency;
     }
 
     public String getName() {
@@ -16,7 +23,7 @@ public class Patient implements Comparable<Patient>{
     }
 
     public LocalDateTime getAppointment() {
-        return appointment.atStartOfDay();
+        return appointment;
     }
 
     public boolean isEmergency() {
@@ -25,16 +32,21 @@ public class Patient implements Comparable<Patient>{
 
     @Override
     public String toString() {
-        return "Patient{" +
-                "name='" + name + '\'' +
-                ", appointment=" + appointment +
-                ", isEmergency=" + isEmergency +
-                '}';
+        //14.3.22 12:30 John Doe
+        if(isEmergency) {
+            return String.format("EMERGENCY %s", name);
+        }
+        return String.format("%s %s", appointment.format(DateTimeFormatter.ofPattern("dd.M.yy H:mm")), name);
     }
 
 
     @Override
     public int compareTo(Patient o) {
-        return 0;
+        int compareIsEmergency = -Boolean.compare(isEmergency, o.isEmergency);
+        if(compareIsEmergency != 0){
+            return compareIsEmergency;
+        }
+        return this.getAppointment().compareTo(o.getAppointment());
     }
+
 }

@@ -13,7 +13,7 @@ public class WaitingRoom {
     public int getPatientCount() {
         return waitingRoomQueue.size();
     }
-    public Patient getPatientInPrepatation() {
+    public Patient getPatientInPreparation() {
         return waitingRoomQueue.poll();
     }
 
@@ -33,7 +33,7 @@ public class WaitingRoom {
     }
 
     public void treatNextPatient() {
-        waitingRoomQueue.add(getPatientInPrepatation());
+        waitingRoomQueue.add(getPatientInPreparation());
     }
 
     @Override

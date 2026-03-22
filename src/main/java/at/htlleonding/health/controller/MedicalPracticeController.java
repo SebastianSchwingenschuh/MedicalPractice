@@ -1,5 +1,6 @@
 package at.htlleonding.health.controller;
 
+import at.htlleonding.health.model.Patient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -41,13 +42,14 @@ public class MedicalPracticeController {
     @FXML
     private Label undergoingTreatmentLabel;
 
+    Patient patient;
 
     @FXML private void initialize() {
-        this.patientsLeftLabel.setText("_");
+
     }
     @FXML
     void handleAddPatientClicked(ActionEvent event) {
-
+        //patient = new Patient(nameTextField.getText(), datePicker.getChronology(), timeTextField.getText());
     }
 
     @FXML

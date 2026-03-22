@@ -4,6 +4,7 @@ import at.htlleonding.observer.ChangeObserver;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.PriorityBlockingQueue;
 
 public class WaitingRoom {
@@ -55,5 +56,11 @@ public class WaitingRoom {
                 ", observers=" + observers +
                 ", currentPatient=" + currentPatient +
                 '}';
+    }
+
+    public List<Patient> getWaitingListSnapshot() {
+        List<Patient> snapshot = new ArrayList<>();
+        patients.forEach(snapshot::add);
+        return snapshot;
     }
 }
